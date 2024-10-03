@@ -1,6 +1,6 @@
 # 🌈 MatrixColorAPI
 
-**MatrixColorAPI** is a powerful and flexible library for processing and applying custom colors, gradients, and text decorations in Minecraft or other Java-based applications. It supports hex colors, legacy Minecraft color codes, and more advanced formatting like gradients and solid colors.
+**MatrixColorAPI** is a powerful and flexible library for processing and applying custom colors, gradients, and text decorations in Minecraft servers. It supports hex colors, legacy Minecraft color codes, and more advanced formatting like gradients and solid colors.
 
 This library simplifies color management while allowing developers to build beautifully formatted text with ease!
 
