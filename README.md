@@ -130,4 +130,4 @@ Thanks to everyone contributing to this project! Your support and feedback help 
 
 ## 👥 Contact
 
-For any questions or feedback, feel free to open an issue or reach out to us on our [discord server](https://discord.gg/B4QsfUrdUR.)
+For any questions or feedback, feel free to open an issue or reach out to us on our [discord server.](https://discord.gg/B4QsfUrdUR)
