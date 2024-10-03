@@ -23,27 +23,12 @@ This library simplifies color management while allowing developers to build beau
 1. **Add the JAR to your project**: (Instructions to add it as a dependency once you release it, or users can manually download it)
 2. **Build the project**: Make sure your project is built with a compatible version of Java.
 
-### Usage
-
-Here's how you can use **MatrixColorAPI** in your project:
-
-```java
-import net.matrixcreations.libraries.ColorUtils;
-
-public class Main {
-    public static void main(String[] args) {
-        String formattedText = ColorUtils.process("&#FF5733Hello, <GRADIENT:#FFD700>world</GRADIENT:#FF0000>!");
-        System.out.println(formattedText); // Log or send the message with colors
-    }
-}
-```
-
-### Examples
+### Example Usages
 
 - **Solid Color Example:**
 
 ```java
-String text = "<SOLID:#FFD700>This is yellow text</SOLID>";
+String text = "<SOLID:#FFD700>This is yellow text";
 String processed = ColorUtils.process(text);
 ```
 
@@ -65,8 +50,6 @@ String processedLegacy = ColorUtils.process(legacyText);
 
 - `process(String text)`: Process a single string for color codes, gradients, and formatting.
 - `process(List<String> texts)`: Process a list of strings for color codes and formatting.
-- `applyGradient(String text, String startColor, String endColor)`: Apply a gradient to a string from start to end color.
-- `applySolidColor(String text, String hexColor)`: Apply a solid color to a string.
 
 ## 📦 Contributing
 
@@ -80,7 +63,7 @@ Make sure to follow the coding standards and include tests where appropriate.
 
 ## 📝 License
 
-This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for details.
+This project is licensed under the **Apache 2.0 License**. See the [LICENSE](./LICENSE) file for details.
 
 ## 📢 Acknowledgments
 
