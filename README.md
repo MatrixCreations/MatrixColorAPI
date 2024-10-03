@@ -4,8 +4,6 @@
 
 This library simplifies color management while allowing developers to build beautifully formatted text with ease!
 
-![MatrixColorAPI Banner](https://example.com/banner.png) <!-- Add a relevant banner image link -->
-
 ## ✨ Features
 
 - 🎨 **Hex and Legacy Color Code Support**
