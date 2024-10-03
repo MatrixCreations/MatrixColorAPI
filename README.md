@@ -1,6 +1,6 @@
 # 🌈 MatrixColorAPI
 
-**MatrixColorAPI** is a powerful and flexible library for processing and applying custom colors, gradients, and text decorations in Minecraft or other Java-based applications. It supports hex colors, legacy Minecraft color codes, and more advanced formatting like gradients and solid colors.
+**MatrixColorAPI** is a powerful and flexible library for processing and applying custom colors, gradients, and text decorations in Minecraft servers. It supports hex colors, legacy Minecraft color codes, and more advanced formatting like gradients and solid colors.
 
 This library simplifies color management while allowing developers to build beautifully formatted text with ease!
 
@@ -14,14 +14,51 @@ This library simplifies color management while allowing developers to build beau
 - 🔄 **Easy to Use**: Clean and simple API to integrate into your project.
 - 🌍 **Supports All Server Software**: Compatible with Spigot, Paper, Bukkit, Minestom, Fabric, and more.
 - 🕹️ **Works with Every Minecraft Version Starting from 1.16.5**.
-- 🛠️ **Open to Contributions**: Licensed under MIT for open contributions, modifications, and commercial use!
+- 🛠️ **Open to Contributions**: Licensed under Apache 2.0 License for open contributions, modifications, and commercial use!
 
 ## 🚀 Getting Started
 
 ### Installation
 
-1. **Add the JAR to your project**: (Instructions to add it as a dependency once you release it, or users can manually download it)
-2. **Build the project**: Make sure your project is built with a compatible version of Java.
+MatrixColorAPI is hosted on [Jitpack](https://jitpack.io), making it easy to integrate with your Maven or Gradle projects. Follow the steps below to add it to your project:
+
+### Using Gradle
+1. **Add the Jitpack repository** to your `build.gradle` file (inside `repositories` block):
+   ```gradle
+   repositories {
+       maven { url 'https://jitpack.io' }
+   }
+   ```
+
+2. **Add the dependency** in your `dependencies` block:
+   ```gradle
+   dependencies {
+       implementation 'com.github.MatrixCreations:MatrixColorAPI:v1.0.4'
+   }
+   ```
+
+### Using Maven
+1. **Add the Jitpack repository** to your `pom.xml`:
+   ```xml
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+   ```
+
+2. **Add the dependency** in your `dependencies` block:
+   ```xml
+   <dependency>
+       <groupId>com.github.MatrixCreations</groupId>
+       <artifactId>MatrixColorAPI</artifactId>
+       <version>v1.0.4</version>
+   </dependency>
+   ```
+
+### Additional Information
+
+- For the latest version, visit the [Jitpack page](https://jitpack.io/#MatrixCreations/MatrixColorAPI).
+- Ensure you're using Java 16 or higher to avoid compatibility issues.
 
 ### Example Usages
 
