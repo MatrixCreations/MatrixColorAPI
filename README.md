@@ -20,8 +20,45 @@ This library simplifies color management while allowing developers to build beau
 
 ### Installation
 
-1. **Add the JAR to your project**: (Instructions to add it as a dependency once you release it, or users can manually download it)
-2. **Build the project**: Make sure your project is built with a compatible version of Java.
+MatrixColorAPI is hosted on [Jitpack](https://jitpack.io), making it easy to integrate with your Maven or Gradle projects. Follow the steps below to add it to your project:
+
+### Using Gradle
+1. **Add the Jitpack repository** to your `build.gradle` file (inside `repositories` block):
+   ```gradle
+   repositories {
+       maven { url 'https://jitpack.io' }
+   }
+   ```
+
+2. **Add the dependency** in your `dependencies` block:
+   ```gradle
+   dependencies {
+       implementation 'com.github.MatrixCreations:MatrixColorAPI:v1.0.4'
+   }
+   ```
+
+### Using Maven
+1. **Add the Jitpack repository** to your `pom.xml`:
+   ```xml
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+   ```
+
+2. **Add the dependency** in your `dependencies` block:
+   ```xml
+   <dependency>
+       <groupId>com.github.MatrixCreations</groupId>
+       <artifactId>MatrixColorAPI</artifactId>
+       <version>v1.0.4</version>
+   </dependency>
+   ```
+
+### Additional Information
+
+- For the latest version, visit the [Jitpack page](https://jitpack.io/#MatrixCreations/MatrixColorAPI).
+- Ensure you're using Java 16 or higher to avoid compatibility issues.
 
 ### Example Usages
 
