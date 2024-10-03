@@ -46,6 +46,13 @@ String legacyText = "&aThis is a green text with &lBOLD";
 String processedLegacy = ColorUtils.process(legacyText);
 ```
 
+- **Hex Code Support:**
+
+```java
+String hexText = "&#FFD700This is a yellow text with &lBOLD";
+String processedLegacy = ColorUtils.process(hexText);
+```
+
 ## 🛠️ Available Methods
 
 - `process(String text)`: Process a single string for color codes, gradients, and formatting.
