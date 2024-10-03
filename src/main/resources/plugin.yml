@@ -1,6 +1,0 @@
-name: MatrixColorAPI
-version: 'Build 1a'
-main: net.matrixcreations.libraries.MatrixColorAPI
-api-version: '1.16'
-authors: [ MatrixCreations, ItsHarshXD ]
-description: Intuitive Color Library for Spigot
