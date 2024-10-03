@@ -14,7 +14,7 @@ This library simplifies color management while allowing developers to build beau
 - 🔄 **Easy to Use**: Clean and simple API to integrate into your project.
 - 🌍 **Supports All Server Software**: Compatible with Spigot, Paper, Bukkit, Minestom, Fabric, and more.
 - 🕹️ **Works with Every Minecraft Version Starting from 1.16.5**.
-- 🛠️ **Open to Contributions**: Licensed under MIT for open contributions, modifications, and commercial use!
+- 🛠️ **Open to Contributions**: Licensed under Apache 2.0 License for open contributions, modifications, and commercial use!
 
 ## 🚀 Getting Started
 
