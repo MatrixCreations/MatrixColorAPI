@@ -20,6 +20,9 @@ This library simplifies color management while allowing developers to build beau
 
 ## 🚀 Getting Started
 
+> [!IMPORTANT]
+> While MatrixColorAPI is designed to work with all Minecraft server software, it has currently been extensively tested only on Bukkit platforms. We encourage users on other platforms to try it out and report any issues they encounter. Your feedback is crucial in making MatrixColorAPI universally compatible!
+
 ### Installation
 
 ![API Version](https://img.shields.io/jitpack/v/MatrixCreations/MatrixColorAPI.svg?color=512BD4&label=API%20Version&style=for-the-badge)
