@@ -1,0 +1,6 @@
+name: MatrixColorAPI
+version: '1.0.4'
+main: net.matrixcreations.libraries.MatrixColorAPI
+api-version: '1.16'
+authors: [ MatrixCreations, ItsHarshXD ]
+description: Intuitive Color Library for Minecraft Platforms.

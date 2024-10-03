@@ -1,0 +1,12 @@
+{
+  "name": "MatrixColorAPI",
+  "version": "1.0.4",
+  "main": "net.matrixcreations.libraries.MatrixColorAPI",
+  "authors": [
+    "MatrixCreations",
+    "ItsHarshXD"
+  ],
+  "description": "Intuitive Color Library for Minecraft Platforms.",
+  "dependencies": [],
+  "api-version": "1.0"
+}
