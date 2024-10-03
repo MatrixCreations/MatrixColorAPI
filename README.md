@@ -35,7 +35,7 @@ MatrixColorAPI is hosted on [Jitpack](https://jitpack.io), making it easy to int
 2. **Add the dependency** in your `dependencies` block:
    ```gradle
    dependencies {
-       implementation 'com.github.MatrixCreations:MatrixColorAPI:v1.0.5'
+       implementation 'com.github.MatrixCreations:MatrixColorAPI:v1.0.6'
    }
    ```
 
@@ -53,7 +53,7 @@ MatrixColorAPI is hosted on [Jitpack](https://jitpack.io), making it easy to int
    <dependency>
        <groupId>com.github.MatrixCreations</groupId>
        <artifactId>MatrixColorAPI</artifactId>
-       <version>v1.0.5</version>
+       <version>v1.0.6</version>
    </dependency>
    ```
 
@@ -68,28 +68,28 @@ MatrixColorAPI is hosted on [Jitpack](https://jitpack.io), making it easy to int
 
 ```java
 String text = "<SOLID:#FFD700>This is yellow text";
-String processed = ColorUtils.process(text);
+String processed = MatrixColorAPI.process(text);
 ```
 
 - **Gradient Example:**
 
 ```java
 String gradientText = "<GRADIENT:#FF0000>This is a red to yellow gradient</GRADIENT:#FFFF00>";
-String processedGradient = ColorUtils.process(gradientText);
+String processedGradient = MatrixColorAPI.process(gradientText);
 ```
 
 - **Legacy Code Support:**
 
 ```java
 String legacyText = "&aThis is a green text with &lBOLD";
-String processedLegacy = ColorUtils.process(legacyText);
+String processedLegacy = MatrixColorAPI.process(legacyText);
 ```
 
 - **Hex Code Support:**
 
 ```java
 String hexText = "&#FFD700This is a yellow text with &lBOLD";
-String processedLegacy = ColorUtils.process(hexText);
+String processedLegacy = MatrixColorAPI.process(hexText);
 ```
 
 ## 🛠️ Available Methods
