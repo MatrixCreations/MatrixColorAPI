@@ -4,6 +4,8 @@
 
 This library simplifies color management while allowing developers to build beautifully formatted text with ease!
 
+![Thumbnail](https://i.imgur.com/God4ZAt.png)
+
 ## ✨ Features
 
 - 🎨 **Hex and Legacy Color Code Support**
