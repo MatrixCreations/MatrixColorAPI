@@ -1,5 +1,5 @@
 name: MatrixColorAPI
-version: 'Build 2b'
+version: 'Build 2c'
 main: net.matrixcreations.libraries.MatrixColorAPI
 api-version: '1.16'
 authors: [ MatrixCreations, ItsHarshXD ]
