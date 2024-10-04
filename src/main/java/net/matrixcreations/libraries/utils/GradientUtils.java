@@ -36,45 +36,53 @@ public class GradientUtils {
         TextColor end = TextColor.fromHexString("#" + endColor);
 
         StringBuilder result = new StringBuilder();
-
-        boolean bold = false;
-        boolean italic = false;
-        boolean underlined = false;
-        boolean strikethrough = false;
-        boolean obfuscated = false;
-
         int length = text.length();
+
+        boolean isBold = false;
+        boolean isItalic = false;
+        boolean isUnderlined = false;
+        boolean isStrikethrough = false;
+        boolean isObfuscated = false;
+
+        // Iterate through the text to check and apply formatting and gradient colors
         for (int i = 0; i < length; i++) {
-            char currentChar = text.charAt(i);
-
-            if (currentChar == '§') {
-                i++;
-                char formatCode = text.charAt(i);
-                switch (formatCode) {
-                    case 'l': bold = true; break;
-                    case 'o': italic = true; break;
-                    case 'n': underlined = true; break;
-                    case 'm': strikethrough = true; break;
-                    case 'k': obfuscated = true; break;
-                    case 'r':
-                        bold = italic = underlined = strikethrough = obfuscated = false;
-                        break;
-                }
-                continue;
-            }
-
-            float ratio = (float) i / length;
+            // Calculate the gradient color based on the position in the text
+            float ratio = (float) i / (length - 1);  // Smooth transition across entire text
             TextColor color = ColorInterpolater.interpolateColor(start, end, ratio);
+
+            // Check if any formatting should be applied for this part
+            char currentChar = text.charAt(i);
+            if (currentChar == '§') {
+                if (i + 1 < length) {
+                    char formatCode = text.charAt(i + 1);
+                    switch (formatCode) {
+                        case 'l': isBold = true; break;
+                        case 'o': isItalic = true; break;
+                        case 'n': isUnderlined = true; break;
+                        case 'm': isStrikethrough = true; break;
+                        case 'k': isObfuscated = true; break;
+                        case 'r': // Reset formatting
+                            isBold = false;
+                            isItalic = false;
+                            isUnderlined = false;
+                            isStrikethrough = false;
+                            isObfuscated = false;
+                            break;
+                    }
+                    i++; // Skip the formatting code
+                    continue;
+                }
+            }
 
             TextComponent.Builder component = Component.text()
                     .content(String.valueOf(currentChar))
                     .color(color);
 
-            if (bold) component.decorate(TextDecoration.BOLD);
-            if (italic) component.decorate(TextDecoration.ITALIC);
-            if (underlined) component.decorate(TextDecoration.UNDERLINED);
-            if (strikethrough) component.decorate(TextDecoration.STRIKETHROUGH);
-            if (obfuscated) component.decorate(TextDecoration.OBFUSCATED);
+            if (isBold) component.decorate(TextDecoration.BOLD);
+            if (isItalic) component.decorate(TextDecoration.ITALIC);
+            if (isUnderlined) component.decorate(TextDecoration.UNDERLINED);
+            if (isStrikethrough) component.decorate(TextDecoration.STRIKETHROUGH);
+            if (isObfuscated) component.decorate(TextDecoration.OBFUSCATED);
 
             result.append(LegacyComponentSerializer.legacySection().serialize(component.build()));
         }
