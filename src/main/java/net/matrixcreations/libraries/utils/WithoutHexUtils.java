@@ -60,7 +60,6 @@ public class WithoutHexUtils {
     }
 
     private static String applyGradient(String text, String startColor, String endColor) {
-        // Use the hex color strings without the '#' prefix directly
         TextColor start = TextColor.fromHexString("#" + startColor);
         TextColor end = TextColor.fromHexString("#" + endColor);
 
@@ -74,7 +73,6 @@ public class WithoutHexUtils {
         boolean isObfuscated = false;
 
         for (int i = 0; i < length; i++) {
-            // Calculate the gradient color based on the position in the text
             float ratio = (float) i / (length - 1);
             TextColor color = ColorInterpolater.interpolateColor(start, end, ratio);
 
@@ -88,12 +86,8 @@ public class WithoutHexUtils {
                         case 'n': isUnderlined = true; break;
                         case 'm': isStrikethrough = true; break;
                         case 'k': isObfuscated = true; break;
-                        case 'r': // Reset formatting
-                            isBold = false;
-                            isItalic = false;
-                            isUnderlined = false;
-                            isStrikethrough = false;
-                            isObfuscated = false;
+                        case 'r':
+                            isBold = isItalic = isUnderlined = isStrikethrough = isObfuscated = false;
                             break;
                     }
                     i++;
