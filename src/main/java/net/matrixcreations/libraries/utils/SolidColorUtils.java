@@ -32,28 +32,47 @@ public class SolidColorUtils {
     private static String applySolidColor(String text, String hexColor) {
         TextColor color = TextColor.fromHexString("#" + hexColor);
 
-        boolean isBold = text.contains("§l") || text.contains("&l");
-        boolean isItalic = text.contains("§o") || text.contains("&o");
-        boolean isUnderlined = text.contains("§n") || text.contains("&n");
-        boolean isStrikethrough = text.contains("§m") || text.contains("&m");
-        boolean isObfuscated = text.contains("§k") || text.contains("&k");
+        StringBuilder result = new StringBuilder();
 
-        text = text.replace("§l", "").replace("&l", "");
-        text = text.replace("§o", "").replace("&o", "");
-        text = text.replace("§n", "").replace("&n", "");
-        text = text.replace("§m", "").replace("&m", "");
-        text = text.replace("§k", "").replace("&k", "");
+        boolean bold = false;
+        boolean italic = false;
+        boolean underlined = false;
+        boolean strikethrough = false;
+        boolean obfuscated = false;
 
-        TextComponent.Builder component = Component.text()
-                .content(text)
-                .color(color);
+        int length = text.length();
+        for (int i = 0; i < length; i++) {
+            char currentChar = text.charAt(i);
 
-        if (isBold) component.decorate(TextDecoration.BOLD);
-        if (isItalic) component.decorate(TextDecoration.ITALIC);
-        if (isUnderlined) component.decorate(TextDecoration.UNDERLINED);
-        if (isStrikethrough) component.decorate(TextDecoration.STRIKETHROUGH);
-        if (isObfuscated) component.decorate(TextDecoration.OBFUSCATED);
+            if (currentChar == '§') {
+                i++;
+                char formatCode = text.charAt(i);
+                switch (formatCode) {
+                    case 'l': bold = true; break;
+                    case 'o': italic = true; break;
+                    case 'n': underlined = true; break;
+                    case 'm': strikethrough = true; break;
+                    case 'k': obfuscated = true; break;
+                    case 'r':
+                        bold = italic = underlined = strikethrough = obfuscated = false;
+                        break;
+                }
+                continue;
+            }
 
-        return LegacyComponentSerializer.legacySection().serialize(component.build());
+            TextComponent.Builder component = Component.text()
+                    .content(String.valueOf(currentChar))
+                    .color(color);
+
+            if (bold) component.decorate(TextDecoration.BOLD);
+            if (italic) component.decorate(TextDecoration.ITALIC);
+            if (underlined) component.decorate(TextDecoration.UNDERLINED);
+            if (strikethrough) component.decorate(TextDecoration.STRIKETHROUGH);
+            if (obfuscated) component.decorate(TextDecoration.OBFUSCATED);
+
+            result.append(LegacyComponentSerializer.legacySection().serialize(component.build()));
+        }
+
+        return result.toString();
     }
 }

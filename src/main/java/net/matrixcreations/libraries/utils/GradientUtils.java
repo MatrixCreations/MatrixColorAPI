@@ -36,33 +36,45 @@ public class GradientUtils {
         TextColor end = TextColor.fromHexString("#" + endColor);
 
         StringBuilder result = new StringBuilder();
-        boolean isBold = text.contains("§l") || text.contains("&l");
-        boolean isItalic = text.contains("§o") || text.contains("&o");
-        boolean isUnderlined = text.contains("§n") || text.contains("&n");
-        boolean isStrikethrough = text.contains("§m") || text.contains("&m");
-        boolean isObfuscated = text.contains("§k") || text.contains("&k");
 
-        // Remove formatting markers from the actual text before processing
-        text = text.replace("§l", "").replace("&l", "");
-        text = text.replace("§o", "").replace("&o", "");
-        text = text.replace("§n", "").replace("&n", "");
-        text = text.replace("§m", "").replace("&m", "");
-        text = text.replace("§k", "").replace("&k", "");
+        boolean bold = false;
+        boolean italic = false;
+        boolean underlined = false;
+        boolean strikethrough = false;
+        boolean obfuscated = false;
 
         int length = text.length();
         for (int i = 0; i < length; i++) {
-            float ratio = (float) i / length;  // Changed ratio calculation
+            char currentChar = text.charAt(i);
+
+            if (currentChar == '§') {
+                i++;
+                char formatCode = text.charAt(i);
+                switch (formatCode) {
+                    case 'l': bold = true; break;
+                    case 'o': italic = true; break;
+                    case 'n': underlined = true; break;
+                    case 'm': strikethrough = true; break;
+                    case 'k': obfuscated = true; break;
+                    case 'r':
+                        bold = italic = underlined = strikethrough = obfuscated = false;
+                        break;
+                }
+                continue;
+            }
+
+            float ratio = (float) i / length;
             TextColor color = ColorInterpolater.interpolateColor(start, end, ratio);
 
             TextComponent.Builder component = Component.text()
-                    .content(String.valueOf(text.charAt(i)))
+                    .content(String.valueOf(currentChar))
                     .color(color);
 
-            if (isBold) component.decorate(TextDecoration.BOLD);
-            if (isItalic) component.decorate(TextDecoration.ITALIC);
-            if (isUnderlined) component.decorate(TextDecoration.UNDERLINED);
-            if (isStrikethrough) component.decorate(TextDecoration.STRIKETHROUGH);
-            if (isObfuscated) component.decorate(TextDecoration.OBFUSCATED);
+            if (bold) component.decorate(TextDecoration.BOLD);
+            if (italic) component.decorate(TextDecoration.ITALIC);
+            if (underlined) component.decorate(TextDecoration.UNDERLINED);
+            if (strikethrough) component.decorate(TextDecoration.STRIKETHROUGH);
+            if (obfuscated) component.decorate(TextDecoration.OBFUSCATED);
 
             result.append(LegacyComponentSerializer.legacySection().serialize(component.build()));
         }
