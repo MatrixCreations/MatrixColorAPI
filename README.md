@@ -22,6 +22,8 @@ This library simplifies color management while allowing developers to build beau
 
 > [!IMPORTANT]
 > While MatrixColorAPI is designed to work with all Minecraft server software, it has currently been extensively tested only on Bukkit platforms. We encourage users on other platforms to try it out and report any issues they encounter. Your feedback is crucial in making MatrixColorAPI universally compatible!
+> 
+> Please note that the Minestom Gradient Blocks format "<GRADIENT></GRADIENT>" is currently not supported. If you want to make this format work with MatrixColorAPI, feel free to code a solution and open a pull request. We welcome contributions to expand compatibility!
 
 ### Installation
 
