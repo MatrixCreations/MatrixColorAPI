@@ -42,7 +42,7 @@ MatrixColorAPI is hosted on [Jitpack](https://jitpack.io), making it easy to int
 2. **Add the dependency** in your `dependencies` block:
    ```gradle
    dependencies {
-       implementation 'com.github.MatrixCreations:MatrixColorAPI:v1.0.6'
+       implementation 'com.github.MatrixCreations:MatrixColorAPI:v1.0.7'
    }
    ```
 
@@ -60,7 +60,7 @@ MatrixColorAPI is hosted on [Jitpack](https://jitpack.io), making it easy to int
    <dependency>
        <groupId>com.github.MatrixCreations</groupId>
        <artifactId>MatrixColorAPI</artifactId>
-       <version>v1.0.6</version>
+       <version>v1.0.7</version>
    </dependency>
    ```
 
