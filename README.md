@@ -4,7 +4,7 @@
 
 This library simplifies color management while allowing developers to build beautifully formatted text with ease!
 
-![Thumbnail](https://media.discordapp.net/attachments/1262415791731511347/1291385890517815387/image_9.png?ex=671c4095&is=671aef15&hm=b7f9fa12709bd425946f8efcd72a537693d8ec4303d3ca2a8dc40b84f206a2bc&=&format=webp&quality=lossless&width=550&height=314)
+![Thumbnail](https://i.postimg.cc/WbT6DnYn/image-2024-10-25-072606092.png)
 
 ## ✨ Features
 
